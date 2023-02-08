@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
    - source: /
-    destination: /home/Desktop/tmp/yaml_pipeline
+     destination: /home/ubuntu/flaskapp
     #  destination: /home/ubuntu/flaskapp
 
 permissions:
