@@ -2,12 +2,12 @@ version: 0.0
 os: linux
 files:
    - source: /
-    destination: /home/ubuntu/yaml_pipeline
+    destination: /home/ubuntu/flaskapp
     #  destination: /home/ubuntu/flaskapp
 
 permissions:
   #  - object: /home/ubuntu/flaskapp
-   - object: /home/ubuntu/yaml_pipeline
+   - object: /home/ubuntu/flaskapp
      pattern: "**"
      owner: root
      group: root
