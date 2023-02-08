@@ -1,0 +1,25 @@
+version: 0.0
+os: linux
+files:
+   - source: /
+    destination: /home/ubuntu/yaml_pipeline
+    #  destination: /home/ubuntu/flaskapp
+
+permissions:
+  #  - object: /home/ubuntu/flaskapp
+   - object: /home/ubuntu/yaml_pipeline
+     pattern: "**"
+     owner: root
+     group: root
+     mode: 755
+     type:
+       - file
+hooks:
+   BeforeInstall:
+    - location: scripts/installflask.sh
+      runas: root
+   AfterInstall:
+    - location: scripts/startflask.sh
+      runas: root
+    - location: scripts/restartflask.sh
+      runas: root
