@@ -1,0 +1,19 @@
+pipeline {
+    agent any 
+    stages {
+        stage('installflask') { 
+            steps {
+                sh sudo apt-get update
+                sh sudo apt-get install python-virtualenv3
+                sh sudo apt-get install python-pip
+                sh pip install Flask
+            }
+        }
+        stage('startflask') { 
+            steps {
+                sh cd /home/ubuntu/yaml_pipeline
+                sh sudo service nginx restart
+                sh sudo service flaskapp restart
+            }
+    }
+}
